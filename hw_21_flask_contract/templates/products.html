@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+
+{% block products %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Fats</th>
+            <th>Carbs</th>
+            <th>Proteins</th>
+            <th>Grams</th>
+        </tr>
+        {% for product in products %}
+            <tr>
+                <td>{{product.name}}</td>
+                <td>{{product.fats}}</td>
+                <td>{{product.carbs}}</td>
+                <td>{{product.proteins}}</td>
+                <td>{{product.grs}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+<br>
+<br>
+<br>
+
+    <form action="" method="POST">
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="proteins" placeholder="Proteins">
+        <input type="text" name="fats" placeholder="Fats">
+        <input type="text" name="carbs" placeholder="Carbs">
+        <input type="text" name="grs" placeholder="Grams">
+        <input type="submit" value="Add">
+    </form>
+{% endblock %}
