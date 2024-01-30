@@ -15,13 +15,7 @@ def get_products():
         return render_template('products.html', products=products)
 
     elif request.method == 'POST':
-        product = Product(
-            name=request.form['name'],
-            carbs=float(request.form['carbs']),
-            proteins=float(request.form['proteins']),
-            fats=float(request.form['fats']),
-            grs=float(request.form['grs']),
-        )
+        product = Product(**request.form)
         with Session(engine) as sss:
             sss.add(product)
             sss.commit()
