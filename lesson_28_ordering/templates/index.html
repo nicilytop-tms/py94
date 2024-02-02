@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <form action="/sorting-news/">
+        <select name="name_sorting" id="">
+            <option value="rating">Rating</option>
+        </select>
+        <select name="priority_sorting" id="">
+            <option value="">От низкого к высокому</option>
+            <option value="-">От высокого к низкому</option>
+        </select>
+        <button>Sort</button>
+    </form>
+    <ul>
+        {% for n in news %}
+            <li>{{ n.title }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
