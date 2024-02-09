@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+
+{% block read_news %}
+    <div class="col-md-12 col-sm-12">
+        <h1>{{ news.title }}</h1>
+        <img class="card-img-top" src="{{ news.image.url }}" alt="Card image cap">
+        <p class="mt-4 mb-4">{{ news.content }}</p>
+    </div>
+{% endblock %}
